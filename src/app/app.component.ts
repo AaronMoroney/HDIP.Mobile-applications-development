@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
-
+import {
+  IonApp,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonTabs
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { heart, home, library } from 'ionicons/icons';
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet],
+  imports: [IonApp, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonTabs],
 })
 export class AppComponent {
-  constructor() {}
+  // We need to add, 'AddIcons' to render the icons
+  // SRC: https://ionicframework.com/docs/api/tabs
+  constructor() {
+    addIcons({ heart, home, library });
+  }
 }

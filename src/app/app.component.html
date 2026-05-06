@@ -1,3 +1,20 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Persist the tabs throughout the application -->
+  <ion-tabs>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="favourites" href="/favourites">
+        <ion-icon name="heart"></ion-icon>
+        Favourites
+      </ion-tab-button>
+      <ion-tab-button tab="home" href="/">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="library" href="/library">
+        <ion-icon name="library"></ion-icon>
+        Library
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>
