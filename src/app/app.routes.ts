@@ -1,11 +1,33 @@
 import { Routes } from '@angular/router';
-import { FavouritesPage } from './favourites/favourites.page';
-import { HomePage } from './home/home.page';
-import { LibraryPage } from './library/library.page';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomePage },
-  { path: 'favourites', component: FavouritesPage},
-  { path: 'library', component: LibraryPage},
+  {
+    path: 'tabs',
+    component: TabsComponent,
+    children: [
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
+      },
+      {
+        path: 'library',
+        loadComponent: () => import('./pages/library/library.page').then((m) => m.LibraryPage),
+      },
+      {
+        path: 'favourites',
+        loadComponent: () => import('./pages/favourites/favourites.page').then((m) => m.FavouritesPage),
+      },
+      {
+        path: '',
+        redirectTo: '/example/home',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/home',
+    pathMatch: 'full',
+  },
 ];
