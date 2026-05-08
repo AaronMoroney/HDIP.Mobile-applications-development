@@ -1,0 +1,17 @@
+<ion-text>
+  <h1>{{ heading }}</h1>
+</ion-text>
+
+<ion-card>
+  <img [src]="imageUrl" [alt]="imageAlt" />
+  <ion-card-header>
+    {{ cardHeader }}
+  </ion-card-header>
+  <ion-card-content>
+    <div class="card-actions">
+      <ion-button [routerLink]="buttonRoute">
+        {{ buttonLabel }}
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

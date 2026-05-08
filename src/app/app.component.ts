@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import {
   IonApp,
   IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonTabs
+
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { heart, home, library } from 'ionicons/icons';
@@ -13,7 +10,10 @@ import { heart, home, library } from 'ionicons/icons';
   selector: 'app-root',
   standalone: true,
   templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonTabs],
+  imports: [
+    IonApp,
+    IonRouterOutlet,
+  ],
 })
 export class AppComponent {
   // We need to add, 'AddIcons' to render the icons

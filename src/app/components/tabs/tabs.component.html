@@ -1,0 +1,58 @@
+<!-- SRC: https://ionicframework.com/docs/api/tabs -->
+<ion-tabs>
+  <!-- Nav -->
+  <ion-tab tab="home">
+    <div class="ion-page">
+      <ion-header translucent="true">
+        <ion-toolbar>
+          <!-- Add a persistent header (REPEATS FOR EACH PAGE)-->
+          <app-header></app-header>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content fullscreen="true">
+        <!-- Add the page -->
+        <app-home></app-home>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab tab="favourites">
+    <div class="ion-page">
+      <ion-header translucent="true">
+        <ion-toolbar>
+          <app-header></app-header>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content fullscreen="true">
+        <app-favourites></app-favourites>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab tab="library">
+    <div class="ion-page">
+      <ion-header translucent="true">
+        <ion-toolbar>
+          <app-header></app-header>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content fullscreen="true">
+        <app-library></app-library>
+      </ion-content>
+    </div>
+  </ion-tab>
+
+  <!-- bar -->
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="favourites" href="/favourites">
+      <ion-icon name="heart"></ion-icon>
+      Favourites
+    </ion-tab-button>
+    <ion-tab-button tab="home" href="/">
+      <ion-icon name="home"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button tab="library" href="/library">
+      <ion-icon name="library"></ion-icon>
+      Library
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

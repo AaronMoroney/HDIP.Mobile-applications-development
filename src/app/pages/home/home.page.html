@@ -1,0 +1,25 @@
+<div class="ion-padding">
+  <ion-searchbar></ion-searchbar>
+  <!-- Hero image - most trending -->
+  <img src="https://placehold.co/400x450" alt="Movie Poster" />
+  <app-trending></app-trending>
+  <!-- Favourites CTA -->
+  <app-cta
+    heading="Favourites"
+    imageUrl="https://placehold.co/400x200"
+    imageAlt="Favourites CTA"
+    cardHeader="All my Favourites"
+    buttonLabel="View"
+    buttonRoute="/tabs/favourites"
+  />
+  <!-- TODO: is there a more elegent way to implement this? -->
+  <!-- Library List CTA -->
+  <app-cta
+    heading="Library"
+    imageUrl="https://placehold.co/400x200"
+    imageAlt="Library CTA"
+    cardHeader="Track your watching"
+    buttonLabel="View"
+    buttonRoute="/tabs/library"
+  />
+</div>
