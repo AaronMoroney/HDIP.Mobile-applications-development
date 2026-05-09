@@ -5,7 +5,7 @@
   <!-- /////////////////////////////////////////////////// -->
   <!-- TODO -->
   <!-- 1) do a loop through our data here -->
-  <!-- 2) We will also make these card components dynamic -->
+  <!-- 2) We will also make these card components reusable -->
   <!-- ////////////////////////////////////////////////// -->
   <!-- Slide 1 -->
   <swiper-slide>
@@ -19,35 +19,17 @@
       </ion-card-header>
       <ion-card-content>
         <div class="card-actions">
-          <ion-select placeholder="Status" interface="popover">
-            <ion-select-option value="want">Want to Watch</ion-select-option>
-            <ion-select-option value="watching">Watching</ion-select-option>
-            <ion-select-option value="watched">Have Watched</ion-select-option>
-          </ion-select>
-           <ion-button shape="round">
-            <ion-icon slot="icon-only" name="heart"></ion-icon>
+          <ion-button
+            fill="outline"
+            id="open-action-sheet"
+          >
+            Add to library
           </ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </swiper-slide>
-  <!-- Slide 2 -->
-  <swiper-slide>
-    <ion-text>
-      <p>2</p>
-    </ion-text>
-    <ion-card>
-      <img src="https://placehold.co/400x200" alt="Movie Poster" />
-      <ion-card-header>
-        <ion-card-title>Movie Title</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div class="card-actions">
-          <ion-select placeholder="Status" interface="popover">
-            <ion-select-option value="want">Want to Watch</ion-select-option>
-            <ion-select-option value="watching">Watching</ion-select-option>
-            <ion-select-option value="watched">Have Watched</ion-select-option>
-          </ion-select>
+          <ion-action-sheet
+            trigger="open-action-sheet"
+            header="Actions"
+            [buttons]="actionSheetButtons"
+          ></ion-action-sheet>
           <ion-button shape="round">
             <ion-icon slot="icon-only" name="heart"></ion-icon>
           </ion-button>
@@ -55,4 +37,6 @@
       </ion-card-content>
     </ion-card>
   </swiper-slide>
+  <!-- Slide 2 -->
+  
 </swiper-container>

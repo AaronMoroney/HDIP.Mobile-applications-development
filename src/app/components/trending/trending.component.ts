@@ -4,8 +4,6 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
-  IonSelect,
-  IonSelectOption,
   IonButton,
   IonIcon,
   IonText,
@@ -21,8 +19,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     IonCardHeader,
     IonCardTitle,
     IonCardContent,
-    IonSelect,
-    IonSelectOption,
     IonButton,
     IonIcon,
     IonText,
@@ -30,6 +26,33 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // required for swiper web components
 })
 export class TrendingComponent implements OnInit {
+  public actionSheetButtons = [
+    {
+      text: 'Currently Watching',
+      data: {
+        action: 'Add to currently watching',
+      },
+    },
+    {
+      text: 'Want To Watch',
+      data: {
+        action: 'Add to want',
+      },
+    },
+    {
+      text: 'Watched',
+      data: {
+        action: 'Add to watched',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
   constructor() {}
   ngOnInit() {}
 }
