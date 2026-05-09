@@ -1,0 +1,25 @@
+@if (isLoading) {
+  <div class="loadingContainer">
+    <ion-spinner name="lines-sharp"></ion-spinner>
+  </div>
+}
+
+@if (!isLoading) {
+  <ion-card>
+    <img
+      [alt]="imageAlt + ' poster'"
+      [src]="'https://image.tmdb.org/t/p/original/' + imageSrc"
+    />
+    <ion-card-header>
+      <ion-card-title>
+        {{ title }}
+      </ion-card-title>
+    </ion-card-header>
+    <!-- TODO: add link -->
+    <ion-card-content>
+      <ion-button>
+        View
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+}
