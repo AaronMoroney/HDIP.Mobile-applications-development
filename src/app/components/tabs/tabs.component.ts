@@ -4,18 +4,9 @@ import {
   IonTabButton,
   IonTabs,
   IonIcon,
-  IonToolbar,
-  IonTab,
-  IonHeader,
-  IonContent,
+  IonRouterOutlet
 } from '@ionic/angular/standalone';
-import { HeaderComponent } from '../header/header.component';
-import { HomePage } from 'src/app/pages/home/home.page';
-import { FavouritesPage } from 'src/app/pages/favourites/favourites.page';
-import { LibraryPage } from 'src/app/pages/library/library.page';
 
-// TO-DO
-// Can i destrucutre / spread in 'components', 'pages, and import them from an external file?
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
@@ -27,16 +18,7 @@ import { LibraryPage } from 'src/app/pages/library/library.page';
     IonIcon,
     IonTabs,
     IonIcon,
-    IonToolbar,
-    IonTab,
-    IonHeader,
-    IonContent,
-    // component
-    HeaderComponent,
-    // pages
-    HomePage,
-    FavouritesPage,
-    LibraryPage,
+    IonRouterOutlet,
   ],
 })
 export class TabsComponent implements OnInit {

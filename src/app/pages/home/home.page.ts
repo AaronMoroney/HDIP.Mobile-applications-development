@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { IonSearchbar } from '@ionic/angular/standalone';
+import { IonSearchbar, IonHeader, IonContent, IonToolbar } from '@ionic/angular/standalone';
 import { HttpOptions } from '@capacitor/core';
 import { play } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
@@ -12,6 +12,7 @@ import { addIcons } from 'ionicons';
 import { TrendingComponent } from 'src/app/components/trending/trending.component';
 import { CTAComponent } from 'src/app/components/cta/cta.component';
 import { SearchResultPreviewComponent } from 'src/app/components/searchResultPreview/searchResultPreview';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 // services imports
 import { searchService } from 'src/app/services/search.service';
 import { baseURL } from 'src/app/services/constants';
@@ -22,11 +23,15 @@ import { baseURL } from 'src/app/services/constants';
   styleUrls: ['home.page.scss'],
   imports: [
     IonSearchbar,
+    IonHeader,
+    IonContent,
+    IonToolbar,
+    HeaderComponent,
     TrendingComponent,
     CTAComponent,
     SearchResultPreviewComponent,
     FormsModule,
-    CommonModule
+    CommonModule,
   ],
 })
 
@@ -60,7 +65,6 @@ export class HomePage {
     try {
       let getResult = await this.search.get(this.options);
       this.searchResult = getResult.data.results;
-      console.log(this.searchResult);
     } catch {
       console.error(Error);
     }
