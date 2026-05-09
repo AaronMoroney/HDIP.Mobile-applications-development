@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IonButtons, IonAvatar, IonIcon } from '@ionic/angular/standalone';
+import {
+  IonButtons,
+  IonText,
+  IonIcon
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +11,7 @@ import { IonButtons, IonAvatar, IonIcon } from '@ionic/angular/standalone';
   styleUrls: ['./header.component.scss'],
   imports: [
     IonButtons,
-    IonAvatar,
+    IonText,
     IonIcon
   ],
 })
