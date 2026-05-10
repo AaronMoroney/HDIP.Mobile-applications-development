@@ -1,42 +1,42 @@
+<div *ngFor="let first of topTrending">
+
+  <img
+    [src]="'https://image.tmdb.org/t/p/original/' + first.poster_path"
+    [alt]="first.title + ' movie Poster'"
+  />
+</div>
 <ion-text>
-  <h1>Now Trending</h1>
+  <h1>Today's Top 10</h1>
 </ion-text>
-<swiper-container [slidesPerView]="1.2" [spaceBetween]="10">
-  <!-- /////////////////////////////////////////////////// -->
-  <!-- TODO -->
-  <!-- 1) do a loop through our data here -->
-  <!-- 2) We will also make these card components reusable -->
-  <!-- ////////////////////////////////////////////////// -->
-  <!-- Slide 1 -->
-  <swiper-slide>
-    <ion-text>
-      <p>1</p>
-    </ion-text>
-    <ion-card>
-      <img src="https://placehold.co/400x200" alt="Movie Poster" />
-      <ion-card-header>
-        <ion-card-title>Movie Title</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div class="card-actions">
-          <ion-button
-            fill="outline"
-            id="open-action-sheet"
-          >
-            Add to library
-          </ion-button>
-          <ion-action-sheet
-            trigger="open-action-sheet"
-            header="Actions"
-            [buttons]="actionSheetButtons"
-          ></ion-action-sheet>
-          <ion-button shape="round">
-            <ion-icon slot="icon-only" name="heart"></ion-icon>
-          </ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card>
+<swiper-container
+  [slidesPerView]="1.2"
+  [spaceBetween]="10"
+>
+  <!-- start of slides -->
+  <swiper-slide *ngFor="let trending of trendingResult;  let i = index">
+    <div style="display: flex">
+      <ion-text>
+        <p>
+          {{i+1}}
+        </p>
+      </ion-text>
+      <ion-card>
+        <img
+          [src]="'https://image.tmdb.org/t/p/original/' + trending.poster_path"
+          [alt]="trending.title + ' movie Poster'"
+        />
+        <ion-card-content>
+          <div class="card-actions">
+            <app-maintain-library-action
+              [index]="i"
+            ></app-maintain-library-action>
+            <ion-button shape="round">
+              <ion-icon slot="icon-only" name="heart"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </swiper-slide>
-  <!-- Slide 2 -->
-  
+  <!-- end of slides -->
 </swiper-container>

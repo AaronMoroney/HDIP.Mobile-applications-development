@@ -1,0 +1,12 @@
+<!-- Index needed to maintain unique ID's -->
+<ion-button
+  fill="outline"
+  [id]="triggerId"
+>
+  Add to library
+</ion-button>
+<ion-action-sheet
+  [trigger]="triggerId"
+  header="Edit library"
+  [buttons]="actionSheetButtons"
+></ion-action-sheet>
