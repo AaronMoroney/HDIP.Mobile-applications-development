@@ -1,9 +1,12 @@
-<!-- Pass the ID of the movie to this component -->'
-<!-- Fire the method set on click -->
-<ion-button shape="round" (click)="changeFavourite()">
+<ion-button
+  expand="block"
+  shape="round"
+  (click)="changeFavourite()"
+>
   <ion-icon
-    slot="icon-only"
+    slot="start"
     [name]="isAlreadyFavourited ? 'heart' : 'heart-outline'"
   >
   </ion-icon>
+  {{ isAlreadyFavourited ? "Remove from favourites" : "Add to favourites" }}
 </ion-button>
