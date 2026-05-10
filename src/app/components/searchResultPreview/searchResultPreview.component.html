@@ -17,7 +17,11 @@
     </ion-card-header>
     <!-- TODO: add link -->
     <ion-card-content>
-      <ion-button>
+      <ion-button
+        (click)="goToMovieDetails(id,{
+          title: title,
+          poster_path: imageSrc,
+        })">
         View
       </ion-button>
     </ion-card-content>

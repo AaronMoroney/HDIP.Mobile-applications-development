@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IonCard,
   IonCardContent,
@@ -22,8 +23,6 @@ import {
   ],
 })
 export class SearchResultPreviewComponent {
-  constructor() {}
-
   // src: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
   get isLoading(): boolean {
     // accounts for '' as false
@@ -35,4 +34,19 @@ export class SearchResultPreviewComponent {
   @Input() imageSrc: string = '';
   @Input() imageAlt: string = '';
   @Input() title: string = '';
+  @Input() id: number = 0;
+
+  constructor(private router: Router) {}
+
+  goToMovieDetails(movieId: number, movie: any) {
+    this.router.navigate(['/movie-details', movieId], {
+      state: {
+        title: movie.title,
+        imageSrc: movie.poster_path,
+        imageAlt: movie.title,
+        id: movieId,
+        description: movie.overview,
+      },
+    });
+  }
 }

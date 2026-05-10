@@ -1,5 +1,5 @@
+<!-- hero -->
 <div *ngFor="let first of topTrending">
-
   <img
     [src]="'https://image.tmdb.org/t/p/original/' + first.poster_path"
     [alt]="first.title + ' movie Poster'"
@@ -27,11 +27,8 @@
         />
         <ion-card-content>
           <div class="card-actions">
-            <app-maintain-library-action
-              [index]="i"
-            ></app-maintain-library-action>
-            <ion-button shape="round">
-              <ion-icon slot="icon-only" name="heart"></ion-icon>
+            <ion-button (click)="goToMovieDetails(trending.id, trending)">
+              View
             </ion-button>
           </div>
         </ion-card-content>
