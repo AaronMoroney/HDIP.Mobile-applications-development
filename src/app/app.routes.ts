@@ -5,6 +5,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { HomePage } from './pages/home/home.page';
 import { FavouritesPage } from './pages/favourites/favourites.page';
 import { LibraryPage } from './pages/library/library.page';
+import { MovieDetailsPage } from './pages/movieDetails/movieDetails.page';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,10 @@ export const routes: Routes = [
       {
         path: 'favourites',
         component: FavouritesPage
+      },
+      {
+        path: 'movie-details/:id',
+        component: MovieDetailsPage
       },
       {
         path: '',

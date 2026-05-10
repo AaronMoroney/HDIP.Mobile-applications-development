@@ -1,0 +1,30 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <!-- Poster -->
+    <img
+      [alt]="title + ' poster'"
+      [src]="'https://image.tmdb.org/t/p/original/' + imageSrc"
+    />
+    <ion-card-header>
+      <ion-card-title>
+        <h1>{{ title }}</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <!-- Actions -->
+    <ion-card-content>
+      <app-maintain-favourites
+        [id]="movieId"
+        [imageSrc]="'https://image.tmdb.org/t/p/original/' + imageSrc"
+        [title]="title"
+      >
+      </app-maintain-favourites>
+      <app-maintain-library-action></app-maintain-library-action>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

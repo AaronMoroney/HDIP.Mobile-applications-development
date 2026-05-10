@@ -1,20 +1,18 @@
 // ENV impports
 import { environment } from 'src/environments/environment';
 // library
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
   IonCard,
   IonCardContent,
   IonButton,
-  IonIcon,
   IonText,
 } from '@ionic/angular/standalone';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpOptions } from '@capacitor/core';
-// components
-import { MaintainLibraryActionComponent } from 'src/app/components/maintainLibraryAction/maintainLibraryAction.component';
 // services import
 import { trendingURL } from 'src/app/services/constants';
 import { trendingService } from 'src/app/services/trending.service';
@@ -27,9 +25,7 @@ import { trendingService } from 'src/app/services/trending.service';
     IonCard,
     IonCardContent,
     IonButton,
-    IonIcon,
     IonText,
-    MaintainLibraryActionComponent,
     CommonModule,
     FormsModule
   ],
@@ -39,7 +35,7 @@ import { trendingService } from 'src/app/services/trending.service';
 export class TrendingComponent implements OnInit {
   private apiKey = environment.MOVIE_DB_API_KEY;
 
-  trendingResult: any=[];
+  trendingResult: any = [];
   topTrending: any = [];
 
   options: HttpOptions = {
@@ -61,8 +57,28 @@ export class TrendingComponent implements OnInit {
     }
   }
 
-  constructor(private trending: trendingService) {
-  }
+  @Input() imageSrc: string = '';
+  @Input() imageAlt: string = '';
+  @Input() title: string = '';
+  @Input() id: number = 0;
+  @Input() description: string = '';
+
+  constructor(
+    private trending: trendingService,
+    private router: Router
+  ) {}
+
+  goToMovieDetails(movieId: number, movie: any) {
+  this.router.navigate(['/movie-details', movieId], {
+    state: {
+      title: movie.title,
+      imageSrc: movie.poster_path,
+      imageAlt: movie.title,
+      id: movieId,
+      description: movie.overview
+    },
+  });
+}
 
   // NgOnInit - Fire getTrending on app mount
   ngOnInit() {
