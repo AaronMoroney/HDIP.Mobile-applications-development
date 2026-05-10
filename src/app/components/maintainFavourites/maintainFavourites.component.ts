@@ -53,6 +53,9 @@ export class MaintainFavouritesComponent implements OnInit {
     });
 
     this.isAlreadyFavourited = true;
+
+    // move to favourites page
+    this.router.navigate(['/favourites']);
   }
 
   async ngOnInit() {
