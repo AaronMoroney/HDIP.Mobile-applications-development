@@ -7,4 +7,13 @@
   <ion-text>
     <h1>Your favourite films</h1>
   </ion-text>
+  <div *ngFor="let stored of storedFavourites">
+      <app-search-result-preview
+        [imageSrc]="stored.imageSrc"
+        [imageAlt]="stored.title"
+        [title]="stored.title"
+        [id]="stored.id"
+      >
+      </app-search-result-preview>
+  </div>
 </ion-content>

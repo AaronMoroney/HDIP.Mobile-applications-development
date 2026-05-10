@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import {
   IonContent,
   IonHeader,
-  IonTitle,
   IonToolbar,
   IonCard,
   IonCardHeader,
@@ -26,11 +25,6 @@ import { MaintainLibraryActionComponent } from 'src/app/components/maintainLibra
 // services
 import { movieDetailsService } from 'src/app/services/movieDetails.service';
 
-// TODO: (Show details)
-// [✅] -> Push in the ID of the movie from the various locations to here
-// [✅] -> First lets do it from trending
-// [✅] -> Click view, arrive here
-
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movieDetails.page.html',
@@ -39,7 +33,6 @@ import { movieDetailsService } from 'src/app/services/movieDetails.service';
   imports: [
     IonContent,
     IonHeader,
-    IonTitle,
     IonToolbar,
     IonCard,
     IonCardHeader,
@@ -89,7 +82,7 @@ export class MovieDetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    const navigation = this.router.getCurrentNavigation();
+    const navigation = this.router.currentNavigation();
     const state = navigation?.extras?.state;
 
     if (state) {

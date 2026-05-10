@@ -18,7 +18,12 @@
     </ion-card-header>
     <!-- Actions -->
     <ion-card-content>
-      <app-maintain-favourites></app-maintain-favourites>
+      <app-maintain-favourites
+        [id]="movieId"
+        [imageSrc]="'https://image.tmdb.org/t/p/original/' + imageSrc"
+        [title]="title"
+      >
+      </app-maintain-favourites>
       <app-maintain-library-action></app-maintain-library-action>
     </ion-card-content>
   </ion-card>
