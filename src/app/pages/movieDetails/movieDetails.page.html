@@ -27,4 +27,35 @@
       <app-maintain-library-action></app-maintain-library-action>
     </ion-card-content>
   </ion-card>
+  <div class="ion-padding section">
+    <ion-text>
+      <p>{{ description }}</p>
+    </ion-text>
+    <!-- Cast -->
+    <ion-text>
+      <h2>Cast - limited to 3</h2>
+    </ion-text>
+    <div>
+      <ion-card *ngFor="let cast of movieDetailsCast" class="ion-padding">
+        <img
+          [src]="'https://image.tmdb.org/t/p/original/' + cast.profile_path"
+        />
+        <h3>{{cast.name}}</h3>
+        <p>{{cast.character}}</p>
+        <ion-button (click)="goToPersonDetails(cast.id)"> view </ion-button>
+      </ion-card>
+    </div>
+    <!-- Cast end -->
+    <!--  -->
+    <!-- Crew start -->
+    <ion-text>
+      <h2>Crew - limited to 3</h2>
+    </ion-text>
+    <ion-card *ngFor="let crew of movieDetailsCrew" class="ion-padding">
+      <h3>{{crew.name}}</h3>
+      <p>{{crew.job}}</p>
+      <ion-button (click)="goToPersonDetails(crew.id)"> view </ion-button>
+    </ion-card>
+    <!-- Crew end -->
+  </div>
 </ion-content>

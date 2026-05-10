@@ -1,0 +1,67 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div>
+    <img
+      [src]="'https://image.tmdb.org/t/p/original/' + personData.profile_path"
+    />
+
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <h1>{{personData.name}}</h1>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Also Known As</p>
+          <!-- Ran out of time -->
+          <!-- <h2>{{personData.also_known_as[0]}}</h2> -->
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Born</p>
+          <h2>{{personData.birthday}}</h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Died</p>
+          <h2>{{personData.birthday}}</h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Place of Birth</p>
+          <h2>{{personData.place_of_birth}}</h2>
+        </ion-label>
+      </ion-item>
+
+      <div *ngFor="let cast of personCastData">
+        <!-- This should be movie details page -->
+        <!-- Ran out of time -->
+        <app-search-result-preview
+          [imageSrc]="cast.poster_path"
+          [imageAlt]="cast.title"
+          [title]="cast.title"
+          [id]="cast.id"
+        ></app-search-result-preview>
+      </div>
+
+      <ion-item>
+        <ion-label>
+          <p>Biography</p>
+          <h2>{{personData.biography}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

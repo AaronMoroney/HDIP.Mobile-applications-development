@@ -6,6 +6,7 @@ import { HomePage } from './pages/home/home.page';
 import { FavouritesPage } from './pages/favourites/favourites.page';
 import { LibraryPage } from './pages/library/library.page';
 import { MovieDetailsPage } from './pages/movieDetails/movieDetails.page';
+import { PersonDetailsPage } from './pages/personDetails/personDetails.page';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,10 @@ export const routes: Routes = [
       {
         path: 'movie-details/:id',
         component: MovieDetailsPage
+      },
+      {
+        path: 'person-details/:id',
+        component: PersonDetailsPage
       },
       {
         path: '',
