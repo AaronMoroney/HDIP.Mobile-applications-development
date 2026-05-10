@@ -4,7 +4,6 @@ import {
   IonTabButton,
   IonTabs,
   IonIcon,
-  IonRouterOutlet
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -18,7 +17,6 @@ import {
     IonIcon,
     IonTabs,
     IonIcon,
-    IonRouterOutlet,
   ],
 })
 export class TabsComponent implements OnInit {

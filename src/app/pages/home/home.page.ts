@@ -4,7 +4,12 @@ import { environment } from 'src/environments/environment';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { IonSearchbar, IonHeader, IonContent, IonToolbar } from '@ionic/angular/standalone';
+import {
+  IonSearchbar,
+  IonHeader,
+  IonContent,
+  IonToolbar
+} from '@ionic/angular/standalone';
 import { HttpOptions } from '@capacitor/core';
 import { play } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
@@ -37,7 +42,6 @@ import { baseURL } from 'src/app/services/constants';
 
 export class HomePage {
   private apiKey = environment.MOVIE_DB_API_KEY;
-  private URL = baseURL;
 
   isFocused = false;
   searchString = '';
@@ -60,7 +64,7 @@ export class HomePage {
   // TODO: add a debouncer
   async makeSearch(query: string) {
     this.options = {
-      url: `${this.URL}${this.searchString}&api_key=${this.apiKey}`,
+      url: `${baseURL}${this.searchString}&api_key=${this.apiKey}`,
     };
     try {
       let getResult = await this.search.get(this.options);

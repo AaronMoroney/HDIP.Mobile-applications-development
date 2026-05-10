@@ -16,6 +16,7 @@
     <!-- if there is yet to be a search made -->
     @if (searchString === '') {
     <div>
+      <app-trending></app-trending>
       <app-cta
         heading="Favourites"
         imageUrl="https://placehold.co/400x200"
@@ -24,11 +25,6 @@
         buttonLabel="View"
         buttonRoute="/favourites"
       />
-      <!-- Hero image - most trending -->
-      <img src="https://placehold.co/400x450" alt="Movie Poster" />
-      <app-trending></app-trending>
-      <!-- TODO: is there a more elegent way to implement this? -->
-      <!-- Library List CTA -->
       <app-cta
         heading="Library"
         imageUrl="https://placehold.co/400x200"
