@@ -1,0 +1,10 @@
+Library
+
+The intention of this page was to maintain a list of the following:
+
+- Have watched
+- Want to watch
+- Currently watching
+
+You can see an implementation I made of this in React here:
+https://github.com/AaronMoroney/Projects.MyReads/tree/main
