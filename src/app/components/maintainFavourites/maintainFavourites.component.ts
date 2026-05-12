@@ -34,6 +34,9 @@ export class MaintainFavouritesComponent implements OnInit {
 
   async checkStorage(): Promise<boolean> {
     let currentList = await this.favouriteService.get('favourites');
+    if(!currentList) {
+      return false;
+    }
     return currentList.some((item: Favourite) => item.id === this.movieId);
   }
 
